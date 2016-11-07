@@ -1,18 +1,23 @@
 "use strict";
 
-
+var bonjour = require('bonjour')();
+var AirPlay = require('airplay-protocol');
 
 function init() {
 
 	Homey.log("Starting airplay client");
 
-	var airplayer = require('airplayer');
+	bonjour.find({ type: 'airplay' }, function (service) {
+	  console.log('Found an AirPlay server:', service);
+		var airplay = new AirPlay(service.referer.address);
+		airplay.play('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', function (err) {
+		  if (err) throw err
 
-	var list = airplayer();
-
-	list.on('update', function (player) {
-	  console.log('Found new AirPlay device:', player.name);
-	  player.play('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4');
+		  airplay.playbackInfo(function (err, res, body) {
+		    if (err) throw err
+		    console.log('Playback info:', body)
+		  })
+		})
 	});
 
 }
