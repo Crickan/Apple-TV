@@ -68,12 +68,12 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
 				callback && callback(err)
 				return
 			}
-      Homey.log(device)
+      //Homey.log(device)
       Homey.log('media', media)
-      var airplay = new AirPlay(device.referer.address, device.port);
-      airplay.play(media, function (err) {
-        callback && callback(null, true)
-
+      var airplay = new AirPlay(device.referer.address, device.port)
+      airplay.play(media.url, 0, function (err, result) {
+        Homey.log(err)
+        callback(null, true)
       })
 
 
