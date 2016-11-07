@@ -1,0 +1,28 @@
+{
+  "name": "com.swttt.airplay",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "airplay-protocol": "^2.0.2",
+    "bonjour": "^3.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swttt/com.swttt.airplay.git"
+  },
+  "keywords": [
+    "airplay",
+    "client"
+  ],
+  "author": "Bas Jansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swttt/com.swttt.airplay/issues"
+  },
+  "homepage": "https://github.com/swttt/com.swttt.airplay#readme"
+}

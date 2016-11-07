@@ -8,5 +8,58 @@
     "author": {
         "name": "Bas Jansen",
         "email": "bas@balotti.com"
-    }
+    },
+    "drivers": [
+		{
+			"id": "airplay",
+			"name": {
+				"en": "Airplay"
+			},
+			"images": {
+				"large": "./drivers/chromecast/assets/images/large.jpg",
+				"small": "./drivers/chromecast/assets/images/small.jpg"
+			},
+			"class": "other",
+			"capabilities": [ ],
+			"pair": [
+				{
+					"id": "list_airplay",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_airplay"
+					}
+				},
+				{
+					"id": "add_airplay",
+					"template": "add_devices"
+				}
+			]
+		}
+	],
+  "flow": {
+        "actions": [
+          {
+				"id": "castVideo",
+				"title": {
+					"en": "Cast a video URL",
+					"nl": "Cast een video URL"
+				},
+				"fluidArgs": true,
+				"args": [
+					{
+						"name": "airplay",
+						"type": "device",
+						"filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=airplay"
+					},
+					{
+						"name": "url",
+						"type": "text",
+						"placeholder": {
+							"en": "URL"
+						}
+					}
+				]
+			}
+    ]
+  }
 }
