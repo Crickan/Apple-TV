@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "airplay-protocol": "^2.0.2",
-    "bonjour": "^3.5.0"
+    "bonjour": "^3.5.0",
+    "ytdl-core": "^0.7.19"
   },
   "devDependencies": {},
   "scripts": {

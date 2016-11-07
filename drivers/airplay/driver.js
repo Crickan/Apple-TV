@@ -1,6 +1,8 @@
 'use strict'
 var bonjour = require('bonjour')()
 var AirPlay = require('airplay-protocol')
+var ytdl = require('ytdl-core')
+var ytdlUtil = require('ytdl-core/lib/util')
 var devices = []
 var devices_data = {}
 
