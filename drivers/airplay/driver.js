@@ -18,6 +18,13 @@ exports.added = function(device_data, callback) {
     callback(null, true)
 }
 
+exports.deleted = function(device_data, callback) {
+    delete devices[device_data.id];
+
+    Homey.log('Device deleted');
+    callback(null, true);
+}
+
 exports.pair = function(socket) {
     socket.on('list_devices', function(data, callback) {
         callback(null, devices.map(function(airplay) {
@@ -75,7 +82,7 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
                 callback(null, true)
             })
             setInterval(function() {
-                device.serverInfo(function(err, data) {
+                device.playbackInfo(function(err, data) {
                     Homey.log('Keeping alive!');
                 });
             }, 30000)
@@ -87,7 +94,7 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
 
 function initDevice(device_data) {
     devices_data[device_data.id] = device_data
-    console.log('Found device: ' + device_data.name)
+    console.log('Found device: ' + device_data.id)
 }
 
 function getDeviceByName(deviceName) {
