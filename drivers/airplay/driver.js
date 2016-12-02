@@ -78,7 +78,7 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
             //Homey.log(device)
             //Homey.log('media', media)
             device.play(media.url, function(err) {
-                console.log(err)
+                //console.log(err)
                 callback(null, true)
             })
             setInterval(function() {

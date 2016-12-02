@@ -9,6 +9,15 @@
         "name": "Bas Jansen",
         "email": "b@sjansen.email"
     },
+    "category": "video",
+    "description": {
+        "en": "Airplay client for Homey",
+        "nl": "Airplay client voor Homey"
+    },
+    "images": {
+        "large": "./assets/images/large.jpg",
+        "small": "./assets/images/small.jpg"
+    },
     "drivers": [{
         "id": "airplay",
         "name": {
