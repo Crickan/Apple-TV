@@ -9,7 +9,6 @@ var devices_data = {}
 exports.init = function(devices, callback) {
     // Homey.log('init', devices)
     devices.forEach(initDevice)
-    console.log('Found saved device: ' + device.name);
     discoverAirplay()
     callback()
 }
@@ -88,6 +87,7 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
 
 function initDevice(device_data) {
     devices_data[device_data.id] = device_data
+    console.log('Found device: ' + device_data.name)
 }
 
 function getDeviceByName(deviceName) {
@@ -165,6 +165,4 @@ function getYTVideoInfo(url, options, callback) {
             callback(null, format)
         }
     })
-}
-})
 }
