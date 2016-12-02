@@ -74,8 +74,10 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
                 callback(null, true)
             })
             setInterval(function() {
-                Homey.log(device.state);
-            }, 2000)
+                device.serverInfo(function(err, data) {
+                    Homey.log('Keeping alive!');
+                });
+            }, 30000)
 
 
         })
