@@ -19,13 +19,13 @@
         "small": "./assets/images/small.jpg"
     },
     "drivers": [{
-        "id": "airplay",
+        "id": "appletv",
         "name": {
-            "en": "Airplay"
+            "en": "Apple tv"
         },
         "images": {
-            "large": "./drivers/airplay/assets/images/large.jpg",
-            "small": "./drivers/airplay/assets/images/small.jpg"
+            "large": "./drivers/appletv/assets/images/large.jpg",
+            "small": "./drivers/appletv/assets/images/small.jpg"
         },
         "class": "other",
         "capabilities": [],
@@ -49,15 +49,27 @@
             },
             "fluidArgs": true,
             "args": [{
-                "name": "airplay",
+                "name": "appletv",
                 "type": "device",
-                "filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=airplay"
+                "filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=appletv"
             }, {
                 "name": "url",
                 "type": "text",
                 "placeholder": {
                     "en": "URL"
                 }
+            }]
+        }, {
+            "id": "stopVideo",
+            "title": {
+                "en": "Stop playback",
+                "nl": "Stop afspelen"
+            },
+            "fluidArgs": true,
+            "args": [{
+                "name": "appletv",
+                "type": "device",
+                "filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=appletv"
             }]
         }]
     }

@@ -5,6 +5,7 @@ var ytdl = require('ytdl-core')
 var ytdlUtil = require('ytdl-core/lib/util')
 var devices = []
 var devices_data = {}
+var intervals = []
 
 exports.init = function(devices, callback) {
     // Homey.log('init', devices)
@@ -65,6 +66,15 @@ function discoverAirplay(resetList) {
     setTimeout(discoverAirplay, 600000, true)
 }
 
+exports.stopVideo = function(deviceName, callback) {
+    getDevice(deviceName, function(device) {
+        device.stop(function(err) {
+            //console.log(err)
+            callback(null, true)
+        })
+    }, callback)
+}
+
 exports.playVideo = function(deviceName, videoUrl, callback) {
 
     // Homey.log(deviceName, devices)
@@ -81,9 +91,14 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
                 //console.log(err)
                 callback(null, true)
             })
-            setInterval(function() {
+
+            intervals['i' + device.name] = setInterval(function() {
                 device.playbackInfo(function(err, data) {
-                    Homey.log('Keeping alive!');
+                    console.log(device.state);
+                    if (device.state == 'stopped') {
+                        clearInterval(intervals['i' + device.name]);
+                        console.log('Keeping alive stopped!');
+                    };
                 });
             }, 30000)
 
