@@ -39,6 +39,27 @@
             "id": "add_airplay",
             "template": "add_devices"
         }]
+    }, {
+        "id": "kodi",
+        "name": {
+            "en": "Kodi"
+        },
+        "images": {
+            "large": "./drivers/kodi/assets/images/large.jpg",
+            "small": "./drivers/kodi/assets/images/small.jpg"
+        },
+        "class": "other",
+        "capabilities": [],
+        "pair": [{
+            "id": "list_airplay",
+            "template": "list_devices",
+            "navigation": {
+                "next": "add_airplay"
+            }
+        }, {
+            "id": "add_airplay",
+            "template": "add_devices"
+        }]
     }],
     "flow": {
         "actions": [{
@@ -70,6 +91,36 @@
                 "name": "appletv",
                 "type": "device",
                 "filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=appletv"
+            }]
+        }, {
+            "id": "castVideoKodi",
+            "title": {
+                "en": "Cast a video URL",
+                "nl": "Cast een video URL"
+            },
+            "fluidArgs": true,
+            "args": [{
+                "name": "kodi",
+                "type": "device",
+                "filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=kodi"
+            }, {
+                "name": "url",
+                "type": "text",
+                "placeholder": {
+                    "en": "URL"
+                }
+            }]
+        }, {
+            "id": "stopVideoKodi",
+            "title": {
+                "en": "Stop playback",
+                "nl": "Stop afspelen"
+            },
+            "fluidArgs": true,
+            "args": [{
+                "name": "kodi",
+                "type": "device",
+                "filter": "driver_uri=homey:app:com.swttt.airplay&driver_id=kodi"
             }]
         }]
     }

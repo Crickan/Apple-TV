@@ -48,9 +48,9 @@ function discoverAirplay(resetList) {
                 resetList = false
             }
 
-            var models = ['AppleTV5,3', 'AppleTV3,1', 'AppleTV3,2', 'AppleTV2,1', 'AppleTV1,1'];
+            var models = ['Xbmc,1'];
             if (models.indexOf(device.model) > -1) {
-                console.log('Apple device found...')
+                console.log('Kodi device found...')
                 devices.push(device)
             }
             //devices.push(device)
@@ -93,22 +93,21 @@ exports.playVideo = function(deviceName, videoUrl, callback) {
             }
             //Homey.log(device)
             //Homey.log('media', media)
-            device.play(media.url, function(err) {
+            //console.log(device);
+            device.nokeepaliveplay(media.url, function(err) {
                 //console.log(err)
                 callback(null, true)
             })
 
-            intervals['i' + device.name] = setInterval(function() {
-                device.playbackInfo(function(err, data) {
-                    console.log(device.state);
-                });
-            }, 30000)
-            setInterval(function() {
-                if (device.state == 'stopped') {
-                    clearInterval(intervals['i' + device.name]);
-                    console.log('Keeping alive stopped!');
-                }
-            }, 15000)
+            // intervals['i' + device.name] = setInterval(function() {
+            //     device.playbackInfo(function(err, data) {
+            //         console.log(device.state);
+            //         if (device.state == 'stopped') {
+            //             clearInterval(intervals['i' + device.name]);
+            //             console.log('Keeping alive stopped!');
+            //         };
+            //     });
+            // }, 30000)
 
 
         })
