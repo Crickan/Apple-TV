@@ -47,7 +47,13 @@ function discoverAirplay(resetList) {
                 devices.length = 0
                 resetList = false
             }
-            devices.push(device)
+
+            var models = ['AppleTV5,3', 'AppleTV3,1'];
+            if (models.indexOf(device.model) > -1) {
+                console.log('known device found!')
+                devices.push(device)
+            }
+            //devices.push(device)
 
             getDeviceData(device.name, function(device_data) {
                     exports.setAvailable(device_data)
