@@ -1,28 +1,28 @@
 {
-  "name": "com.swttt.airplay",
-  "version": "0.0.1",
-  "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "airplayer": "^2.0.0",
-    "ytdl-core": "^0.7.19"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/swttt/com.swttt.airplay.git"
-  },
-  "keywords": [
-    "airplay",
-    "client"
-  ],
-  "author": "Bas Jansen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/swttt/com.swttt.airplay/issues"
-  },
-  "homepage": "https://github.com/swttt/com.swttt.airplay#readme"
+    "name": "com.swttt.airplay",
+    "version": "0.0.2",
+    "description": "",
+    "main": "app.js",
+    "dependencies": {
+        "airplayer": "^2.0.0",
+        "ytdl-core": "^0.7.19"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swttt/com.swttt.airplay.git"
+    },
+    "keywords": [
+        "airplay",
+        "client"
+    ],
+    "author": "Bas Jansen",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/swttt/com.swttt.airplay/issues"
+    },
+    "homepage": "https://github.com/swttt/com.swttt.airplay#readme"
 }

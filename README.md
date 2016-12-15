@@ -9,5 +9,3 @@ Currently only the video api is integrated. This means that when playing radio, 
 **If you like this app, then consider to buy me a beer :)**
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TAZANTFTCH3DJ)
-
-_NOTE: This app is only tested on the 4th gen apple tv. Known issues can be found on github._
